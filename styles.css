@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #007b5e;
+  --primary-hover: #00664d;
+  --background: #f4f6f8;
+  --white: #ffffff;
+  --text-dark: #212529;
+  --text-light: #6c757d;
+  --input-border: #ced4da;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px 15px;
+}
+
+.container {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+  text-align: center;
+  font-size: 26px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fefefe;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 94, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+.success-message {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=2.0"/>
+  <title>Solicitação de Transporte</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Solicitação de Transporte</h2>
+    <form id="transportForm">
+      <label for="setorSolicitante">Setor Solicitante</label>
+      <input type="text" id="setorSolicitante" name="setorSolicitante" required />
+
+      <label for="motivo">Motivo</label>
+      <select id="motivo" name="motivo" required>
+        <option value="">Selecione</option>
+        <option value="Administrativo">Administrativo</option>
+        <option value="Transferência (Exames)">Transferência (Exames)</option>
+        <option value="Paciente">Paciente</option>
+      </select>
+
+      <label for="dataSolicitacao">Data da Solicitação</label>
+      <input type="date" id="dataSolicitacao" name="dataSolicitacao" required />
+
+      <label for="procedimento">Procedimento ou Atividade</label>
+      <input type="text" id="procedimento" name="procedimento" required />
+
+      <label for="destino">Destino</label>
+      <input type="text" id="destino" name="destino" required />
+
+      <label for="responsavel">Nome do Responsável</label>
+      <input type="text" id="responsavel" name="responsavel" required />
+
+      <label for="dataSaida">Data de Saída</label>
+      <input type="date" id="dataSaida" name="dataSaida" required />
+
+      <label for="horario">Horário de Saída</label>
+      <input type="time" id="horario" name="horario" required />
+
+      <label for="retorno">Previsão de Retorno</label>
+      <input type="date" id="retorno" name="retorno" required />
+
+      <label for="coordenador">Coordenador Responsável</label>
+      <input type="text" id="coordenador" name="coordenador" required />
+
+      <label for="observacoes">Observações</label>
+      <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+
+      <button type="submit">Enviar Solicitação</button>
+    </form>
+
+    <div class="success-message" id="successMsg">
+      ✅ Solicitação enviada com sucesso!
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
