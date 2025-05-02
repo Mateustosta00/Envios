@@ -22,6 +22,9 @@ body {
   align-items: flex-start;
   min-height: 100vh;
   padding: 30px 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #910505, #000000);
+  align-items: center;
 }
 
 .container {
@@ -36,10 +39,14 @@ body {
 h2 {
   margin-top: 0;
   margin-bottom: 30px;
-  color: var(--text-dark);
+  color: var(--text-dark); /* ou substitua por uma cor real, ex: #222 */
   text-align: center;
-  font-size: 26px;
+  font-size: 32px;          /* Maior fonte */
+  font-weight: bold;        /* Negrito para destaque */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Leve sombra para destaque */
+  letter-spacing: 0.5px;    /* Espaçamento suave entre letras */
 }
+
 
 label {
   display: block;

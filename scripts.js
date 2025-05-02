@@ -1,3 +1,16 @@
+
+
+  window.addEventListener("pageshow", function (event) {
+    // Se for uma navegação de volta (ex: botão "Voltar")
+    if (event.persisted || window.performance.getEntriesByType("navigation")[0].type === "back_forward") {
+      sessionStorage.clear(); // limpa sessão
+      document.getElementById("login-area").style.display = "none";
+      document.getElementById("lista-setores").style.display = "block";
+      document.getElementById("senha").value = "";
+      document.getElementById("erro-senha").textContent = "";
+    }
+  });
+
 document.getElementById('transportForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -10,7 +23,6 @@ document.getElementById('transportForm').addEventListener('submit', function (e)
   const responsavel = document.getElementById('responsavel').value.trim();
   const dataSaida = document.getElementById('dataSaida').value;
   const horario = document.getElementById('horario').value;
-  const retorno = document.getElementById('retorno').value;
   const coordenador = document.getElementById('coordenador').value.trim();
   const observacoes = document.getElementById('observacoes').value.trim();
 
@@ -24,7 +36,7 @@ document.getElementById('transportForm').addEventListener('submit', function (e)
   mensagem += `👤 *Responsável:* ${responsavel}\n`;
   mensagem += `🚐 *Data de Saída:* ${dataSaida}\n`;
   mensagem += `🕒 *Horário de Saída:* ${horario}\n`;
-  mensagem += `⏳ *Previsão de Retorno:* ${retorno || 'Não informado'}\n`;
+
   mensagem += `👨‍💼 *Coordenador Responsável:* ${coordenador}`;
 
   // Adiciona observações se houver
@@ -41,3 +53,8 @@ document.getElementById('transportForm').addEventListener('submit', function (e)
   // Abre o WhatsApp
   window.open(`https://wa.me/55${numero}?text=${mensagemCodificada}`, '_blank');
 });
+
+  // Reseta o formulário
+  this.reset();
+
+
