@@ -9,11 +9,12 @@
 </head>
 
 <body>
+
   <div class="container">
     <h2>Solicitação de Transporte</h2>
     <form id="transportForm">
       <label for="setorSolicitante">Setor Solicitante</label>
-      <input type="text" id="setorSolicitante" name="setorSolicitante" required />
+<input type="text" id="setorSolicitante" name="setorSolicitante" readonly required />
 
       <label for="motivo">Motivo</label>
       <select id="motivo" name="motivo" required>
@@ -56,6 +57,18 @@
   </div>
 
   <script src="scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const nomeSetor = sessionStorage.getItem("setorNome");
+      if (nomeSetor) {
+        document.getElementById("setorSolicitante").value = nomeSetor;
+      } else {
+        alert("Nenhum setor logado. Retornando à tela inicial.");
+        window.location.href = "index.html"; // ou outro caminho adequado
+      }
+    });
+  </script>
+  
 </body>
 
 </html>

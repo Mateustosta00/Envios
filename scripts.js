@@ -1,5 +1,18 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   window.addEventListener("pageshow", function (event) {
     // Se for uma navegação de volta (ex: botão "Voltar")
     if (event.persisted || window.performance.getEntriesByType("navigation")[0].type === "back_forward") {
